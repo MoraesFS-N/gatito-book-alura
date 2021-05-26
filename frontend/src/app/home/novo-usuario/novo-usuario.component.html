@@ -19,9 +19,9 @@
   <div class="mb-3">
     <input placeholder="Nome completo" type="text" class="form-control" formControlName="fullName">
     <app-mensagem
-      *ngIf="novoUsuarioForm.get('fullName')?.errors &&
-             novoUsuarioForm.get('fullName')?.touched"
-             mensagem="Nome informado incorreto">
+      *ngIf=" novoUsuarioForm.get('fullName')?.errors &&
+              novoUsuarioForm.get('fullName')?.touched"
+              mensagem="Nome informado incorreto">
     </app-mensagem>
   </div>
 
@@ -31,6 +31,10 @@
         *ngIf=" novoUsuarioForm.get('userName')?.errors?.minusculo &&
                 novoUsuarioForm.get('userName')?.touched"
                 mensagem="Usuário deve estar em letra minúscula">
+    </app-mensagem>
+    <app-mensagem
+        *ngIf=" novoUsuarioForm.get('userName')?.errors?.usuarioExistente"
+                mensagem="Usuário já existe">
     </app-mensagem>
   </div>
 

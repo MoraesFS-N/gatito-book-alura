@@ -8,16 +8,15 @@ import { Observable } from 'rxjs';
 })
 export class NovoUsuarioService {
 
-  urlPost = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 
   cadastraNovoUsuario(novoUsuario: NovoUsuario){
-    return this.http.post(`${this.urlPost}/user/signup`, novoUsuario);
+    return this.http.post('http://localhost:3000/user/signup', novoUsuario);
   }
 
   verificarUsuarioExistente(nomeUsuario: string){
-    return this.http.get(`${this.urlPost}/user/exists/${nomeUsuario}`);
+    return this.http.get(`http://localhost:3000/user/exists/${nomeUsuario}`);
   }
 
 }
