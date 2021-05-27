@@ -1,0 +1,13 @@
+section p{
+  text-align: center;
+  margin-top: 52px;
+}
+
+section p a{
+  transition: 400ms;
+  text-decoration: none;
+}
+
+section p a:hover{
+  filter: brightness(0.5);
+}
