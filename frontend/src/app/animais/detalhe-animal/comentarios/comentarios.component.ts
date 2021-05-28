@@ -17,18 +17,18 @@ export class ComentariosComponent implements OnInit {
 
   constructor(
     private comentariosService: ComentariosService,
-    private FormBuilder: FormBuilder
+    private formBuilder: FormBuilder
   ) {}
 
   ngOnInit(): void {
     this.comentarios$ = this.comentariosService.buscaComentario(this.id);
-    this.comentarioForm = this.FormBuilder.group({
+    this.comentarioForm = this.formBuilder.group({
       comentario: ['', Validators.maxLength(300)],
     });
   }
 
   gravar(): void {
-    const comentario = this.comentarioForm.get('mensagem')?.value ?? '';
+    const comentario = this.comentarioForm.get('comentario')?.value ?? '';
 
     this.comentarios$ = this.comentariosService
       .incluiComentario(this.id, comentario)
